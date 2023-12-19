@@ -1,0 +1,64 @@
+/* HEADER STYLES ------------------------------------- */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-image: url('../img/image.png');
+    background-position: bottom center;
+    background-size: cover;
+    color: whitesmoke;
+}
+header > h1 {
+    font-size: 46px;
+    max-width: 600px;
+    text-align: center;
+}
+header > p {
+    max-width: 600px;
+    text-align: center;
+}
+header > .flex {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    max-width: 600px;
+}
+header > .flex > a, header > .flex > a:link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 30px;
+    margin: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+header > .flex > a:nth-child(1) {
+    background-color: rgb(253, 60, 60);
+}
+header > .flex > a:nth-child(2) {
+    background-color: rgb(15, 15, 15);
+}
+
+/* BLOCKQUOTE STYLES ------------------------------------- */
+blockquote {
+    height: 300px;
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+blockquote > p::before {
+    content: '"';
+    display: block;
+    font-size: 60px;
+    font-weight: 800;
+}
+blockquote > p {
+    font-size: 30px;
+}
