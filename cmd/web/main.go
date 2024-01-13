@@ -14,7 +14,8 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", landing)
 	mux.HandleFunc("/forum", forum)
-	mux.HandleFunc("/adviсe", adviсe)
+	mux.HandleFunc("/SignUp", SignUp)
+	mux.HandleFunc("/SignIn", SignIn)
 
 	fileServer := http.FileServer(http.Dir("./ui/static"))
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
