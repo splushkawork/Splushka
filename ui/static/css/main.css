@@ -19,7 +19,7 @@ html, body {
     width: 100vw;
 }
 body > footer {
-    height: 400px;
+    height: 500px;
     background-color: black;
     color: whitesmoke;
     display: flex;
@@ -28,7 +28,22 @@ body > footer {
     align-items: center;
     text-align: center;
     gap: 50px;
+    line-height: 30px;
 }
 body > footer > h3 {
-    font-size: 36px;
+    font-size: 24px;
+}
+body > footer > p, body > footer > p i{
+    font-size: 16px;
+    font-weight: 300;
+}
+body > footer > .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+body > footer > .socials img {
+    width: 48px;
 }

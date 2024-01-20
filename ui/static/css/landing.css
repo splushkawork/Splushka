@@ -1,12 +1,9 @@
-/* HEADER STYLES ------------------------------------- */
+/* MOBILE CLOSE-TO-EDGE FIX ------------------------- */
+header h1, header p, footer *, main :not(a, div, .random-news *) {
+    margin: 0 5px;
+}
 
-@font-face { 
-    font-family: "Georgia"; 
-    src: url("../fonts/georgia.ttf"); 
-    
-    font-style: normal; 
-} 
-   
+/* HEADER STYLES ------------------------------------- */
 header {
     height: 100vh;
     display: flex;
@@ -37,11 +34,14 @@ header > h1 {
 header > p {
     max-width: 600px;
     text-align: center;
+    opacity: .6;
+    line-height: 30px;
 }
 header > .flex {
     display: flex;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 600px;
 }
 header > .flex > a, header > .flex > a:link {
@@ -70,9 +70,16 @@ main {
     padding-top: 100px;
     background: white;
     color: black;
+    text-align: center;
 }
 
 /* BLOCKQUOTE STYLES ------------------------------------- */
+@font-face { /* special font for quotes */
+    font-family: "Georgia"; 
+    src: url("../fonts/georgia.ttf"); 
+    
+    font-style: normal; 
+} 
 blockquote {
     height: 300px;
     display: flex;
@@ -92,4 +99,168 @@ blockquote > p::before {
 blockquote > p {
     font-size: 30px;
     font-weight: 300;
+}
+
+/* NEWS BLOCK STYLES ----------------------------------- */
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 200px;
+}
+.news h2 {
+    font-size: 50px;
+    font-weight: 600;
+}
+.news p {
+    font-size: 20px;
+    font-weight: 300;
+}
+.news > .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.news > .flex > .news-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    padding: 30px;
+    min-width: 270px;
+    max-width: 320px;
+    background-position: center bottom;
+    background-size: cover;
+    margin: 20px;
+    z-index: 1;
+}
+.news > .flex > .news-item::before {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45));
+}
+.news > .flex > .news-item:nth-child(1) {
+    background-image: url('../img/sky variant 1.png');
+}
+.news > .flex > .news-item:nth-child(2) {
+    background-image: url('../img/sky variant 2.png');
+}
+.news > .flex > .news-item:nth-child(3) {
+    background-image: url('../img/sky variant 3.jpg');
+}
+
+/* RANDOM NEWS STYLES ------------------------------ */
+.random-news {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 150px;
+    width: 100%;
+}
+.random-news > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 140px;
+    min-height: 100px;
+}
+.random-news > div > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+    width: 50%;
+    min-height: 100px;
+    min-width: 300px;
+    color: white;
+    text-decoration: none;
+}
+.random-news > div > a:nth-child(1) {
+    text-align: left;
+}
+.random-news > div > a:nth-child(1) > * {
+    margin-left: 40px;
+    margin-right: 20px;
+}
+.random-news > div > a:nth-child(2) {
+    text-align: right;
+}
+.random-news > div > a:nth-child(2) > * {
+    margin-right: 40px;
+    margin-left: 20px;
+}
+.random-news > div:nth-child(1) > a:nth-child(1) {
+    background-color: rgb(134, 134, 235);
+}
+.random-news > div:nth-child(1) > a:nth-child(2) {
+    background-color: rgb(47, 63, 117);
+}
+.random-news > div:nth-child(2) > a:nth-child(1) {
+    background-color: rgb(73, 40, 113);
+}
+.random-news > div:nth-child(2) > a:nth-child(2) {
+    background-color: rgb(0, 0, 0);
+}
+.random-news .type {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: .6;
+    letter-spacing: 3px;
+}
+.random-news .text {
+    font-size: 20px;
+    font-weight: 600;
+}
+@media screen and (max-width: 599px) {
+    .random-news > div > a {
+        width: 100%;
+    }
+    .random-news {
+        gap: 250px;
+    }
+}
+
+/* ABOUT US BLOCK STYLES --------------------------- */
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 150px;
+    margin-bottom: 75px;
+}
+.about-us h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+.about-us p {
+    max-width: 550px;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 40px;
+}
+@media screen and (max-width: 599px) {
+    .about-us {
+        margin-top: 250px;
+    }
 }

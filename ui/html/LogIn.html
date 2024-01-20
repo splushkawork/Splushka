@@ -11,17 +11,16 @@
 <body>
     <div class="card">
         <div class="switch">
-            <input type="radio" name="type" id="login">
-            <input type="radio" name="type" id="signup" checked>
+            <input type="radio" name="type" id="login" checked>
+            <input type="radio" name="type" id="signup">
 
             <label for="login"><a href="/LogIn">Войти в аккаунт</a></label>
             <label for="signup"><a href="/SignUp">Создать аккаунт</a></label>
         </div>
-        <form action="POST">
+        <form action="GET">
             <input type="text" placeholder="Логин" required>
-            <input type="text" placeholder="Отображаемое имя" required>
             <input type="password" placeholder="Пароль" required>
-            <button>Зарегистрироваться</button>
+            <button>Войти</button>
         </form>
     </div>
 </body>

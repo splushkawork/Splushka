@@ -20,6 +20,6 @@ func SignUp(w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "SignUp.html", r)
 }
 
-func SignIn(w http.ResponseWriter, r *http.Request) {
-	templates.ExecuteTemplate(w, "SignIn.html", r)
+func LogIn(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "LogIn.html", r)
 }

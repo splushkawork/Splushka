@@ -15,7 +15,7 @@ func main() {
 	mux.HandleFunc("/", landing)
 	mux.HandleFunc("/forum", forum)
 	mux.HandleFunc("/SignUp", SignUp)
-	mux.HandleFunc("/SignIn", SignIn)
+	mux.HandleFunc("/LogIn", LogIn)
 
 	fileServer := http.FileServer(http.Dir("./ui/static"))
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
