@@ -14,13 +14,22 @@
             <input type="radio" name="type" id="login" checked>
             <input type="radio" name="type" id="signup">
 
-            <label for="login"><a href="/LogIn">Войти в аккаунт</a></label>
-            <label for="signup"><a href="/SignUp">Создать аккаунт</a></label>
+            <label for="login"><a href="/account?type=login">Войти в аккаунт</a></label>
+            <label for="signup"><a href="/account?type=signup">Создать аккаунт</a></label>
         </div>
-        <form action="GET">
+        {{ if .}}
+            <form action="GET">
+                <input type="text" placeholder="Логин" required>
+                <input type="password" placeholder="Пароль" required>
+                <button>Войти</button>
+            </form>        
+        {{ else }}
+        <form action="POST">
             <input type="text" placeholder="Логин" required>
+            <input type="text" placeholder="Отображаемое имя" required>
             <input type="password" placeholder="Пароль" required>
-            <button>Войти</button>
+            <button>Создать аккаунт</button>
+        {{ end }}{{ end }}
         </form>
     </div>
 </body>

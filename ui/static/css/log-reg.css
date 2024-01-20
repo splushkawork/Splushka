@@ -32,6 +32,9 @@ body {
     padding: 5px;
     margin-top: 10px;
 }
+.card .switch label {
+    margin: 5px;
+}
 .card .switch label a {
     display: flex;
     justify-content: center;
@@ -43,7 +46,6 @@ body {
     text-decoration: none;
     font-size: 22px;
     min-width: 185px;
-    margin: 5px;
 }
 .card input[id='login']:checked ~ label[for='login'] a, .card input[id='signup']:checked ~ label[for='signup'] a {
     background-color: cornflowerblue;
