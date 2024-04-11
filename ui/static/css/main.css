@@ -15,11 +15,14 @@ b {
     display: none;
 }
 html, body {
-    min-height: calc(100vh - 300px);
+    min-height: calc(100vh + 500px);
     width: 100vw;
 }
 body > footer {
+    position: absolute;
+    bottom: 0;
     height: 500px;
+    width: 100%;
     background-color: black;
     color: whitesmoke;
     display: flex;
@@ -46,4 +49,14 @@ body > footer > .socials {
 }
 body > footer > .socials img {
     width: 48px;
+}
+body > nav {
+    top: 0;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: black;
+}
+body:has(nav) {
+    margin-top: 50px;
 }

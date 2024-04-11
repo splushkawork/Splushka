@@ -1,7 +1,12 @@
+{{define "nav-bar"}}
 <nav>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
+    <a href="/forum"><img src="../static/img/splushka logo.png" alt="Лого форума"></a>
+    <a href="#">О нас</a>
+    <div class="dropdown-hover"><div class="arrow"></div><img src="../static/img/profile icon.png" alt="Профиль"></div>
+    <div>
+        <a href="/account?type=profile">Открыть профиль</a>
+        <a href="/account?type=signup">Зарегистрироваться</a>
+        <a href="/account?type=login">Войти</a>
+    </div>
 </nav>
+{{end}}

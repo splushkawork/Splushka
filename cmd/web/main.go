@@ -1,14 +1,24 @@
 package main
 
 import (
+	//"database/sql"
 	"html/template"
 	"log"
 	"net/http"
+
+	_ "github.com/lib/pq"
 
 	"github.com/gorilla/mux"
 )
 
 var templates *template.Template
+
+/*type product struct{
+    id int
+    model string
+    company string
+    price int
+}*/
 
 func main() {
 	templates = template.Must(template.ParseGlob("ui/html/*.html"))
@@ -20,30 +30,20 @@ func main() {
 	fs := http.FileServer(http.Dir("./ui/static"))
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 
-	log.Println("Запуск веб-сервера на http://localhost:4000")
-	err := http.ListenAndServe(":4000", mux)
-	log.Fatal(err)
+	/*connStr := "user=postgres password=mypass dbname=productdb sslmode=disable"
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+
+	result, err := db.Exec("insert into Products (model, company, price) values ('iPhone X', $1, $2)",
+		"Apple", 72000)
+	if err != nil {
+		panic(err)
+	}*/
+
+	log.Println("Запуск веб-сервера на http://localhost:8000")
+	errServ := http.ListenAndServe(":8000", mux)
+	log.Fatal(errServ)
 }
-
-/*
-var templates *template.Template
-
-func main() {
-	templates = template.Must(template.ParseGlob("ui/html/*.html"))
-
-	log.Println("Server will start at http://localhost:8080/")
-
-	r := mux.NewRouter()
-	r.HandleFunc("/", home).Methods("GET")
-	r.HandleFunc("/forum", forum).Methods("GET")
-	r.HandleFunc("/adviсe", adviсe).Methods("GET")
-
-	fs := http.FileServer(http.Dir("./ui/static/"))
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
-
-	http.ListenAndServe(":8080", r)
-
-	log.Fatal(http.ListenAndServe(":8080", r))
-
-}
-*/
